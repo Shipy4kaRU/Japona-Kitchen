@@ -34,10 +34,11 @@ const DUMMY_MEALS = [
 const MealList = function (props) {
   const mealList = DUMMY_MEALS.map((meal) => (
     <MealItem
+      key={meal.id}
+      id={meal.id}
       name={meal.name}
       description={meal.description}
       price={meal.price}
-      key={Math.random() * 100}
     />
   ));
 

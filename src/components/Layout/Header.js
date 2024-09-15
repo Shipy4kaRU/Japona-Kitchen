@@ -8,7 +8,7 @@ const Header = function (props) {
     <Fragment>
       <header className={style.header}>
         <h1>Япона Кухня</h1>
-        <HeaderCartButton />
+        <HeaderCartButton onClick={props.onShowCart} />
       </header>
       <div className={style["main-image"]}>
         <img src={sushiImg} alt="Блюдо Японской Кухни" />
