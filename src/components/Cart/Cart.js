@@ -8,18 +8,24 @@ import itemstyle from "./CartItem.module.css";
 const Cart = function (props) {
   const cartContext = useContext(CartContext);
 
-  const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
+  const totalAmount = `$${Math.abs(cartContext.totalAmount).toFixed(2)}`;
   const hasItems = cartContext.items.length > 0;
 
-  const removeCartItemHandler = (id) => {};
+  const removeCartItemHandler = (id) => {
+    cartContext.removeItem(id);
+  };
 
-  const addCartItemHandler = () => {};
+  const addCartItemHandler = (item) => {
+    cartContext.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul
       style={{
         overflowY: "auto",
         maxHeight: "20rem",
+        listStyle: "none",
+        paddingLeft: "0",
       }}
     >
       {cartContext.items.map((item) => (
