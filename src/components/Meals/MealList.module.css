@@ -22,3 +22,16 @@
     transform: translateY(0);
   }
 }
+
+.loading {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: brown;
+}

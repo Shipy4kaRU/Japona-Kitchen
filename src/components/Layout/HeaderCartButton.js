@@ -12,7 +12,7 @@ const HeaderCartButton = function (props) {
   }, 0);
 
   const btnClasess = `${style.button} ${isBtnAnimated ? style.bump : ""}`;
-
+ 
   useEffect(() => {
     if (cartContext.items.length === 0) {
       return;
