@@ -47,7 +47,7 @@ const MealList = function (props) {
   return (
     <section className={`${style.meals}`}>
       <Card>
-        {error && <p className={`${style.error}`}>`Ошибка: ${error}`</p>}
+        {error && <p className={`${style.error}`}>Ошибка: ${error}</p>}
         {isLodaing && (
           <p className={`${style.loading}`}>Извлечение данных с сервера...</p>
         )}

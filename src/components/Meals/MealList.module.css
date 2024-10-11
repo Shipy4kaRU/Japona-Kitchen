@@ -29,6 +29,32 @@
   font-weight: 700;
 }
 
+.loading::after {
+  content: " ";
+  display: block;
+  margin: 1em auto 0;
+  width: 20em;
+  height: 0.6em;
+  border-radius: 0.3em;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #57b,
+    #57b 10px,
+    #148 10px,
+    #148 20px
+  );
+  animation: gradient-animation 1s linear infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0; /* Измените значение для регулировки скорости */
+  }
+}
+
 .error {
   text-align: center;
   font-size: 1.3rem;
