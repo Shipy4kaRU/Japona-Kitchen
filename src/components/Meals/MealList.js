@@ -13,7 +13,7 @@ const MealList = function (props) {
       // setErrors(null);
       setIsLoading(true);
       const response = await fetch(
-        "https://sushiapp-3c0b7-default-rtdb.firebaseio.com/menu.json"
+        "https://sushiapp-3c0b7-default-rtdb.firebaseio.com/menu"
       );
       //if (!response.ok) throw new Error("Что-то пошло не так...");
       const data = await response.json();
