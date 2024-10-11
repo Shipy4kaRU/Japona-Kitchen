@@ -13,9 +13,9 @@ const MealList = function (props) {
       // setErrors(null);
       setIsLoading(true);
       const response = await fetch(
-        "https://sushiapp-3c0b7-default-rtdb.firebaseio.com/menu"
+        "https://sushiapp-3c0b7-default-rtdb.firebaseio.com/menu.json"
       );
-      //if (!response.ok) throw new Error("Что-то пошло не так...");
+      if (!response.ok) throw new Error("Что-то пошло не так...");
       const data = await response.json();
       setMeals(
         Object.entries(data).map(([key, value]) => ({
@@ -47,7 +47,7 @@ const MealList = function (props) {
   return (
     <section className={`${style.meals}`}>
       <Card>
-        {error && <p className={`${style.error}`}>Ошибка: ${error}</p>}
+        {error && <p className={`${style.error}`}>Ошибка: {error}</p>}
         {isLodaing && (
           <p className={`${style.loading}`}>Извлечение данных с сервера...</p>
         )}

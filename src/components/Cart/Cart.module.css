@@ -19,7 +19,7 @@
   text-align: right;
 }
 
-.actions button {
+button {
   font: inherit;
   cursor: pointer;
   background-color: transparent;
@@ -29,18 +29,72 @@
   margin-left: 1rem;
 }
 
-.actions button:hover,
-.actions button:active {
+button:hover,
+button:active {
   background-color: #47035d;
   border-color: #47035d;
   color: white;
 }
 
-.actions .button--alt {
+.button--alt {
   color: #6b068a;
 }
 
-.actions .button {
+.button {
   background-color: #6b068a;
   color: white;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.loading::after {
+  content: " ";
+  display: block;
+  margin: 1em auto;
+  width: 20em;
+  height: 0.6em;
+  border-radius: 0.3em;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #57b,
+    #57b 10px,
+    #148 10px,
+    #148 20px
+  );
+  animation: gradient-animation 1s linear infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0; /* Измените значение для регулировки скорости */
+  }
+}
+
+.error {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #a52a2a;
+}
+
+.error::after {
+  content: " ";
+  display: block;
+  margin: 1em auto;
+  width: 2em;
+  height: 2em;
+  background-image: url("../../img/cross.svg");
+  background-position: center;
+  background-size: contain;
+}
+
+.sumbitted-message {
+  font-weight: 600;
 }

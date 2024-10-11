@@ -65,6 +65,12 @@ const cartReducer = (prevState, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+  if (action.type === "CLEAR_CART") {
+    return {
+      items: [],
+      totalAmount: 0,
+    };
+  }
   return defaultCartState;
 };
 
@@ -88,11 +94,18 @@ const CartContextProvider = function (props) {
     });
   };
 
+  const clearCartHandler = () => {
+    displatchCartAction({
+      type: "CLEAR_CART",
+    });
+  };
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
+    clearCart: clearCartHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
